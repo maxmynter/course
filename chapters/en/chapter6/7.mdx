@@ -23,7 +23,7 @@ Compared to BPE and WordPiece, Unigram works in the other direction: it starts f
 
 At each step of the training, the Unigram algorithm computes a loss over the corpus given the current vocabulary. Then, for each symbol in the vocabulary, the algorithm computes how much the overall loss would increase if the symbol was removed, and looks for the symbols that would increase it the least. Those symbols have a lower effect on the overall loss over the corpus, so in a sense they are "less needed" and are the best candidates for removal.
 
-This is all a very costly operation, so we don't just remove the single symbol associated with the lowest loss increase, but the \\(p\\) (\\(p\\) being a hyperparameter you can control, usually 10 or 20) percent of the symbols associated with the lowest loss increase. This process is then repeated until the vocabulary has reached the desired size.
+This is all a very costly operation, so we don't just remove the single symbol associated with the lowest loss increase, but the \\(p\\) ( \\(p\\) being a hyperparameter you can control, usually 10 or 20) percent of the symbols associated with the lowest loss increase. This process is then repeated until the vocabulary has reached the desired size.
 
 Note that we never remove the base characters, to make sure any word can be tokenized.
 
